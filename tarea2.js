@@ -4,37 +4,53 @@
 function eliminarMascota(mascota)
 {
 	var mascotas = ['perros','gatos','canarios','pez','serpiente'];
-	var mascotas_eliminadas = [];
 	
 	
 
-	return mascotas_eliminadas[];
+	var id_mascota = mascotas.indexOf(mascota);
+	
+	if (id_mascota > -1) {
+ 		  mascotas.splice(id_mascota, 1);
+		}
 
+	return mascotas;
 
 }
 
 function eliminarUltimaMascota()
 {
 	var mascotas = ['perros','gatos','canarios','pez','serpiente'];
-	var arreglo_eliminarUltimaMascota = [];
 
+	mascotas.pop();
 
-	return arreglo_eliminarUltimaMascota[];
+	return mascotas;
 }
 
 function agregarMascota(mascota)
 {
 	var mascotas = ['perros','gatos','canarios','pez','serpiente'];
-	var arreglo_agregarUltimaMascota = [];
 
+	mascotas.push(mascota);
 
-	return arreglo_agregarUltimaMascota[];
+	return mascotas;
 }
 
 function contadorMascotas()
 {
 	var mascotas = ['perros','gatos','canarios','pez','serpiente'];
 	var cantidadMascotasTerminaOs = 0;
+
+	for (i=0; i < mascotas.length; i++)
+	{
+		if(mascotas[i].slice(-2) =='os')
+		{
+			
+			console.log("cacas");
+			console.log(mascotas.length);
+			cantidadMascotasTerminaOs ++;
+		}
+	}
+
 
 	console.log("En el arreglo hay:" + cantidadMascotasTerminaOs + " mascotas que terminan con 'os' ");
 	
@@ -94,6 +110,9 @@ const {
     obtenerCargo: function(){
     	return () => console.log(`${this.cargo}`)
     },
+    obtenerComuna: function(){
+    	return () => console.log(`${this.ubicacion.comuna}`)
+    },
     obtenerUbicacionEmpresa: function()
     {
     	return () => console.log(`${this.comuna}`)	 
@@ -108,4 +127,10 @@ const {
 
  	return mensaje;
  }
+
+ function trabajadorTipoDos(Object trabajador)
+ {
+	String mensaje ="El trabajador " + nombreCompleto + "va a su trabajo en " + obtenerComuna + ", es (QA), en el puesto (nº 24), trabaja con (Facebook) y (Google)";
+	return mensaje;
+ }	
 
